@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 defineProps({
-  /**SVG浅醉 */
+  /**SVG前缀 */
   prefix: {
     type: String,
     default: "#icon-",

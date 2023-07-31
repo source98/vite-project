@@ -1,5 +1,6 @@
 import App from '@/App.vue'
 import globalComponents from "@/components"
+import "@/styles/index.scss"
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 //@ts-ignore

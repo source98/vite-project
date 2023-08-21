@@ -1,5 +1,6 @@
 import App from "@/App.vue"
 import globalComponents from "@/components"
+import '@/permisstion.ts'
 import pinia from "@/store"
 import "@/styles/index.scss"
 import ElementPlus from "element-plus"
@@ -7,6 +8,7 @@ import "element-plus/dist/index.css"
 import router from "./router"
 //@ts-ignore
 import zhCn from "element-plus/dist/locale/zh-cn.mjs"
+import 'nprogress/nprogress.css'
 import "virtual:svg-icons-register"
 import { createApp } from "vue"
 

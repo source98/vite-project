@@ -43,8 +43,7 @@ import { Lock, User } from "@element-plus/icons-vue"
 import type { FormRules } from "element-plus"
 import { ElNotification } from "element-plus"
 import { reactive, ref } from "vue"
-import { useRouter } from "vue-router"
-
+import { useRoute, useRouter } from "vue-router"
 /**按钮状态 */
 let loading = ref<boolean>(false)
 /**表单ref */
@@ -53,6 +52,7 @@ const ruleFormRef = ref()
 let useStore = useUserStore()
 /**路由跳转 */
 let $router = useRouter()
+let $route = useRoute()
 /**用户名和密码 */
 const loginForm = reactive<loginForm>({ username: "admin", password: "111111" })
 /**校验规则 */
@@ -70,7 +70,8 @@ const loginHandler = async () => {
   loading.value = true
   try {
     await useStore.userLogin(loginForm)
-    $router.push("/")
+    const redirect: any = $route.query.redirect
+    $router.push({ path: redirect ? redirect : "/" })
     ElNotification({
       title: `Hi,${getTime()}`,
       message: "欢迎回来",

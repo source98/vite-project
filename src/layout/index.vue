@@ -71,6 +71,9 @@ const settingStore = useSettingStore()
     }
     &.fold {
       width: 50px;
+      p{
+        display: none;
+      }
     }
   }
   .layout_topbar {
